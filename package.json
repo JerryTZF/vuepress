@@ -1,0 +1,22 @@
+{
+  "name": "vuepress",
+  "version": "1.0.0",
+  "description": "wiki or doc by vuepress",
+  "main": "index.js",
+  "scripts": {
+    "test": "\\"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JerryTZF/vuepress.git"
+  },
+  "keywords": [
+    "vuepress"
+  ],
+  "author": "Jerry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JerryTZF/vuepress/issues"
+  },
+  "homepage": "https://github.com/JerryTZF/vuepress#readme"
+}
