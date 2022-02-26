@@ -4,7 +4,8 @@
   "description": "wiki or doc by vuepress",
   "main": "index.js",
   "scripts": {
-    "test": "\\"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/JerryTZF/vuepress/issues"
   },
-  "homepage": "https://github.com/JerryTZF/vuepress#readme"
+  "homepage": "https://github.com/JerryTZF/vuepress#readme",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^2.0.0-beta.35",
+    "@vuepress/plugin-search": "^2.0.0-beta.35",
+    "vuepress": "^2.0.0-beta.35"
+  },
+  "dependencies": {
+    "vuepress-theme-yuu": "^3.1.1"
+  }
 }
