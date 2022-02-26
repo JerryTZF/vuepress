@@ -2,25 +2,29 @@
 
 ## 使用说明
 
+---
+
 > 1、搜索快捷键 `/` 或者 `s` 即可将光标移动至搜索框
 > 
 > 2、`sidebar` 目前是做成固定的，后续文档内容较多时，会随着
 > 具体文档变化而变化[FEAT]
 > 
-> 3、文档目录请点击 [概述](/zh/homepage.md)
+> 3、该WIKI项目暂无登录相关模块，该功能暂时由 `traefik` 的 `auth` 中间件提供 :(
+> 
+> 4、新增、编辑文档需要懂得一些 `markdown` 、 `vuepress` 相关知识，相关文档详见：[vuepress](https://vuepress2.netlify.app/)
+> 
+> 5、`emoji` 相关语法参见 [emoji文档 :rocket:](https://vuepress2.netlify.app/zh/reference/default-theme/markdown.html)
+> 
+> 6、文档概述请点击 [概述](/zh/overview.md)
 
-## 目的
-
-> 记录个人学习内容
-> 
-> API接口文档
-> 
-> 项目文档相关
-> 
-> 框架使用技巧
+## 维护说明
 
 ---
 
-## 其他
-
-> 个人成长及感悟 :100:
+> 1、点击 [仓库](https://github.com/JerryTZF/vuepress) 克隆项目至本地
+> 
+> 2、安装依赖 `npm install –save-dev`
+> 
+> 3、相关的配置参数见：`vuepress/docs/.vuepress/config.ts`
+> 
+> 4、读懂 :arrow_up: ，请将文档写入 `vuepress/docs/zh` 目录即可
