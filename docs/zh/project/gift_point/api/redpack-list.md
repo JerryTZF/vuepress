@@ -1,5 +1,5 @@
 ---
-sidebarDepth: 2, 
+sidebarDepth: 2,
 sidebar: [
 { text: '接口列表', link: '/zh/project/gift_point/gift-point-api'},
 { text: '获取轮播图' , link: '/zh/project/gift_point/api/banner'},
@@ -36,20 +36,17 @@ sidebar: [
 { text: '获取排行榜数据', link: '/zh/project/gift_point/api/walk-rank'},
 { text: '兑换积分', link: '/zh/project/gift_point/api/walk-exchange'},
 ]
-prev: /zh/project/gift_point/gift-point-api
-next: /zh/project/gift_point/api/box-show
+prev: /zh/project/gift_point/api/redpack-rob
+next: /zh/project/gift_point/api/redpack-radio
+---
+
+# 红包详情页数据
 
 ---
 
-# 获取轮播图
-
---- 
-
-> ROUTE: v2/banner/list.json
-
+> ROUTE: v2/redpack/show.json
 
 > REQUEST:
-
 ```json
 {
   "app_id": "2021001169664470"
@@ -63,49 +60,96 @@ next: /zh/project/gift_point/api/box-show
   "code": 200,
   "msg": "ok",
   "status": true,
-  "data": [
-    {
-      "id": 3,
-      "image": "https://a.com/a.jpeg",
-      "type": "TASK",
-      //  枚举:TASK|NORMAL
-      "target_type": "",
-      // 枚举:小程序|生活号|生活号文章|H5|二级页面|其他
-      "target": "",
-      // 跳转地址
-      "status": "10",
-      // 枚举:10上架;20:下架;30:删除
-      "sort": 10,
-      // 排序数值
-      "task_id": 1,
-      // 当 type 为NORMAL时,为0
-      "remark": "轮播中完成任务的banner",
-      // 备注
-      "create_time": "2022-01-19 20:47:23",
-      "modify_time": "2022-01-20 14:36:00",
-      "task_info": {
-        // 当 type 为TASK时有值,详情见任务接口
-        "id": 1,
-        "icon": "https://a.com/a.jpeg",
-        "name": "华夏银行信用卡",
-        "flag": "浏览类任务",
-        "remark": "1",
-        "reward_desc": "10个集分宝",
-        "reward_type": "集分宝",
-        "amount": 10,
-        "btn_desc": [
-          "立即领取",
-          "浏览10S"
-        ],
-        "target_type": "小程序",
-        "target": "2021002194625253",
-        "repeat": 1,
-        "sort": 1,
-        "status": "10",
-        "create_time": "2022-01-18 11:05:55",
-        "modify_time": "2022-01-18 11:06:52"
-      }
+  "data": {
+    "8:00": {
+      // 场次名称
+      "start_time": "08:00:00",
+      // 该批次的开始时间
+      "end_time": "12:00:00",
+      // 该批次的结束时间
+      "batch_id": 1,
+      // 批次ID
+      "cards": [
+        // 该批次下所有的卡片
+        {
+          "card_id": 3,
+          // 卡片ID
+          "reward_type": "现金红包",
+          // 红包奖励类型
+          "sum": 200,
+          // 剩余总数
+          "unit": 30,
+          // 每个红包对应的奖励数值
+          "ticket": 10,
+          // 兑换红包所需积分
+          "start_time": "08:00:00",
+          // 该红包可以兑换的开始时间
+          "end_time": "08:10:00"
+          // 该红包兑换截止时间
+        },
+        {
+          "card_id": 1,
+          "reward_type": "集分宝红包",
+          "sum": 100,
+          "unit": 20,
+          "ticket": 50,
+          "start_time": "08:05:00",
+          "end_time": "08:10:00"
+        },
+        {
+          "card_id": 4,
+          "reward_type": "现金红包",
+          "sum": 100,
+          "unit": 5,
+          "ticket": 50,
+          "start_time": "08:00:00",
+          "end_time": "08:10:00"
+        },
+        {
+          "card_id": 2,
+          "reward_type": "集分宝红包",
+          "sum": 1000,
+          "unit": 1,
+          "ticket": 10,
+          "start_time": "08:00:00",
+          "end_time": "08:10:00"
+        }
+      ]
+    },
+    "12:00": {
+      "start_time": "12:00:00",
+      "end_time": "14:00:00",
+      "batch_id": 2,
+      "cards": [
+        {
+          "card_id": 1,
+          "reward_type": "集分宝红包",
+          "sum": 100,
+          "unit": 10,
+          "ticket": 10,
+          "start_time": "12:00:00",
+          "end_time": "12:10:00"
+        },
+        {
+          "card_id": 2,
+          "reward_type": "现金红包",
+          "sum": 0,
+          "unit": 1,
+          "ticket": 1,
+          "start_time": "17:00:00",
+          "end_time": "18:10:00"
+        },
+        {
+          "card_id": 3,
+          "reward_type": "集分宝红包",
+          "sum": 1000,
+          "unit": 1,
+          "ticket": 10,
+          "start_time": "12:00:00",
+          "end_time": "12:10:00"
+        }
+      ]
     }
-  ]
+  }
 }
 ```

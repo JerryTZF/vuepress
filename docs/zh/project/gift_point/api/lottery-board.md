@@ -1,5 +1,5 @@
 ---
-sidebarDepth: 2, 
+sidebarDepth: 2,
 sidebar: [
 { text: '接口列表', link: '/zh/project/gift_point/gift-point-api'},
 { text: '获取轮播图' , link: '/zh/project/gift_point/api/banner'},
@@ -36,23 +36,21 @@ sidebar: [
 { text: '获取排行榜数据', link: '/zh/project/gift_point/api/walk-rank'},
 { text: '兑换积分', link: '/zh/project/gift_point/api/walk-exchange'},
 ]
-prev: /zh/project/gift_point/gift-point-api
-next: /zh/project/gift_point/api/box-show
+prev: /zh/project/gift_point/api/king-img
+next: /zh/project/gift_point/api/lottery-do
+---
+
+# 抽奖面板
 
 ---
 
-# 获取轮播图
-
---- 
-
-> ROUTE: v2/banner/list.json
-
+> ROUTE: v2/lottery/show.json
 
 > REQUEST:
-
 ```json
 {
-  "app_id": "2021001169664470"
+  "app_id": "2021001169664470",
+  "user_id": "2088222096950517"
 }
 ```
 
@@ -65,47 +63,61 @@ next: /zh/project/gift_point/api/box-show
   "status": true,
   "data": [
     {
-      "id": 3,
-      "image": "https://a.com/a.jpeg",
-      "type": "TASK",
-      //  枚举:TASK|NORMAL
-      "target_type": "",
-      // 枚举:小程序|生活号|生活号文章|H5|二级页面|其他
-      "target": "",
-      // 跳转地址
-      "status": "10",
-      // 枚举:10上架;20:下架;30:删除
-      "sort": 10,
-      // 排序数值
-      "task_id": 1,
-      // 当 type 为NORMAL时,为0
-      "remark": "轮播中完成任务的banner",
-      // 备注
-      "create_time": "2022-01-19 20:47:23",
-      "modify_time": "2022-01-20 14:36:00",
-      "task_info": {
-        // 当 type 为TASK时有值,详情见任务接口
-        "id": 1,
-        "icon": "https://a.com/a.jpeg",
-        "name": "华夏银行信用卡",
-        "flag": "浏览类任务",
-        "remark": "1",
-        "reward_desc": "10个集分宝",
-        "reward_type": "集分宝",
-        "amount": 10,
-        "btn_desc": [
-          "立即领取",
-          "浏览10S"
-        ],
-        "target_type": "小程序",
-        "target": "2021002194625253",
-        "repeat": 1,
-        "sort": 1,
-        "status": "10",
-        "create_time": "2022-01-18 11:05:55",
-        "modify_time": "2022-01-18 11:06:52"
-      }
+      "level": "一等奖",
+      "name": "100集分宝",
+      "reward_type": "集分宝",
+      "icon": ""
+    },
+    {
+      "level": "二等奖",
+      "name": "5集分宝",
+      "reward_type": "集分宝",
+      "icon": ""
+    },
+    {
+      "level": "三等奖",
+      "name": "10积分",
+      "reward_type": "积分",
+      "icon": ""
+    },
+    {
+      "level": "四等奖",
+      "name": "1集分宝",
+      "reward_type": "集分宝",
+      "icon": ""
+    },
+    {
+      "level": "五等奖",
+      "name": "星巴克中杯星冰乐",
+      "reward_type": "电子权益",
+      "icon": ""
+    },
+    {
+      "level": "六等奖",
+      "name": "爱奇艺一个月超级会员",
+      "reward_type": "电子权益",
+      "icon": ""
+    },
+    {
+      "level": "七等奖",
+      "name": "网易云一个月黑胶会员",
+      "reward_type": "电子权益",
+      "icon": ""
+    },
+    {
+      "level": "八等奖",
+      "name": "玩具公仔",
+      "reward_type": "实物",
+      "icon": ""
+    },
+    {
+      "level": "九等奖",
+      "name": "再试一次",
+      "reward_type": "实物",
+      "icon": ""
     }
-  ]
+  ],
+  "left_times": 5,
+  "ticket": "10"
 }
 ```

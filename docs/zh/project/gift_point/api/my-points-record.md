@@ -1,5 +1,5 @@
 ---
-sidebarDepth: 2, 
+sidebarDepth: 2,
 sidebar: [
 { text: '接口列表', link: '/zh/project/gift_point/gift-point-api'},
 { text: '获取轮播图' , link: '/zh/project/gift_point/api/banner'},
@@ -36,23 +36,26 @@ sidebar: [
 { text: '获取排行榜数据', link: '/zh/project/gift_point/api/walk-rank'},
 { text: '兑换积分', link: '/zh/project/gift_point/api/walk-exchange'},
 ]
-prev: /zh/project/gift_point/gift-point-api
-next: /zh/project/gift_point/api/box-show
+prev: /zh/project/gift_point/api/my-points
+next: /zh/project/gift_point/api/my-expired-list
+---
+
+# 用户积分变更记录
 
 ---
 
-# 获取轮播图
-
---- 
-
-> ROUTE: v2/banner/list.json
-
+> ROUTE: v2/user/histories.json
 
 > REQUEST:
-
 ```json
 {
-  "app_id": "2021001169664470"
+  "app_id": "2021001169664470",
+  "user_id": "2088122804990942",
+  "is_cost": "no", // 枚举;no:支出;yes:收入
+  "start_time": "2021-12-01 00:00:00", // 选填,默认:2020-01-01 00:00:00
+  "end_time": "2021-12-02 23:59:59", // 选填,默认:2025-01-01 00:00:00
+  "page": 1, // 选填,默认1
+  "step": 10 // 选填,默认10
 }
 ```
 
@@ -65,47 +68,33 @@ next: /zh/project/gift_point/api/box-show
   "status": true,
   "data": [
     {
-      "id": 3,
-      "image": "https://a.com/a.jpeg",
-      "type": "TASK",
-      //  枚举:TASK|NORMAL
-      "target_type": "",
-      // 枚举:小程序|生活号|生活号文章|H5|二级页面|其他
-      "target": "",
-      // 跳转地址
-      "status": "10",
-      // 枚举:10上架;20:下架;30:删除
-      "sort": 10,
-      // 排序数值
-      "task_id": 1,
-      // 当 type 为NORMAL时,为0
-      "remark": "轮播中完成任务的banner",
-      // 备注
-      "create_time": "2022-01-19 20:47:23",
-      "modify_time": "2022-01-20 14:36:00",
-      "task_info": {
-        // 当 type 为TASK时有值,详情见任务接口
-        "id": 1,
-        "icon": "https://a.com/a.jpeg",
-        "name": "华夏银行信用卡",
-        "flag": "浏览类任务",
-        "remark": "1",
-        "reward_desc": "10个集分宝",
-        "reward_type": "集分宝",
-        "amount": 10,
-        "btn_desc": [
-          "立即领取",
-          "浏览10S"
-        ],
-        "target_type": "小程序",
-        "target": "2021002194625253",
-        "repeat": 1,
-        "sort": 1,
-        "status": "10",
-        "create_time": "2022-01-18 11:05:55",
-        "modify_time": "2022-01-18 11:06:52"
-      }
+      "id": 2729779,
+      "task_id": "8",
+      "record_points": -1,
+      "transfer_info": "兑换红包扣减积分",
+      "app_id": "2021001169664470",
+      "create_time": "2021-12-01 16:59:01",
+      "flag": "V2-REDPACK"
+    },
+    {
+      "id": 2729778,
+      "task_id": "8",
+      "record_points": -1,
+      "transfer_info": "兑换红包扣减积分",
+      "app_id": "2021001169664470",
+      "create_time": "2021-12-01 16:58:46",
+      "flag": "V2-REDPACK"
+    },
+    {
+      "id": 2729774,
+      "task_id": "8",
+      "record_points": -1,
+      "transfer_info": "兑换红包扣减积分",
+      "app_id": "2021001169664470",
+      "create_time": "2021-12-01 16:42:53",
+      "flag": "V2-REDPACK"
     }
-  ]
+  ],
+  "count": 58
 }
 ```

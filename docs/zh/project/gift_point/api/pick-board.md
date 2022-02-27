@@ -1,5 +1,5 @@
 ---
-sidebarDepth: 2, 
+sidebarDepth: 2,
 sidebar: [
 { text: '接口列表', link: '/zh/project/gift_point/gift-point-api'},
 { text: '获取轮播图' , link: '/zh/project/gift_point/api/banner'},
@@ -36,23 +36,20 @@ sidebar: [
 { text: '获取排行榜数据', link: '/zh/project/gift_point/api/walk-rank'},
 { text: '兑换积分', link: '/zh/project/gift_point/api/walk-exchange'},
 ]
-prev: /zh/project/gift_point/gift-point-api
-next: /zh/project/gift_point/api/box-show
+prev: /zh/project/gift_point/api/pick-sign
+next: /zh/project/gift_point/api/pick-pick
+---
+
+# 早起打卡面板数据
 
 ---
 
-# 获取轮播图
-
---- 
-
-> ROUTE: v2/banner/list.json
-
+> ROUTE: v2/pick/show.json
 
 > REQUEST:
-
 ```json
 {
-  "app_id": "2021001169664470"
+  "user_id": "2088222096950517"
 }
 ```
 
@@ -63,49 +60,16 @@ next: /zh/project/gift_point/api/box-show
   "code": 200,
   "msg": "ok",
   "status": true,
-  "data": [
-    {
-      "id": 3,
-      "image": "https://a.com/a.jpeg",
-      "type": "TASK",
-      //  枚举:TASK|NORMAL
-      "target_type": "",
-      // 枚举:小程序|生活号|生活号文章|H5|二级页面|其他
-      "target": "",
-      // 跳转地址
-      "status": "10",
-      // 枚举:10上架;20:下架;30:删除
-      "sort": 10,
-      // 排序数值
-      "task_id": 1,
-      // 当 type 为NORMAL时,为0
-      "remark": "轮播中完成任务的banner",
-      // 备注
-      "create_time": "2022-01-19 20:47:23",
-      "modify_time": "2022-01-20 14:36:00",
-      "task_info": {
-        // 当 type 为TASK时有值,详情见任务接口
-        "id": 1,
-        "icon": "https://a.com/a.jpeg",
-        "name": "华夏银行信用卡",
-        "flag": "浏览类任务",
-        "remark": "1",
-        "reward_desc": "10个集分宝",
-        "reward_type": "集分宝",
-        "amount": 10,
-        "btn_desc": [
-          "立即领取",
-          "浏览10S"
-        ],
-        "target_type": "小程序",
-        "target": "2021002194625253",
-        "repeat": 1,
-        "sort": 1,
-        "status": "10",
-        "create_time": "2022-01-18 11:05:55",
-        "modify_time": "2022-01-18 11:06:52"
-      }
-    }
-  ]
+  "data": {
+    "period": "20211207", // 期数
+    "pool": 23121, // 奖池积分
+    "pick_sum": 3, // 连续打卡次数
+    "diff_sum": 4, // 还需要多少天才够连续打卡7天
+    "btn_desc": "立即报名活动", // 按钮文案
+    "btn_callback": "SIGN", // 点击事件;SIGN:报名;PICK:打卡
+    "btn_click": false, // 按钮是否可点击
+    "desc": "请于今日5点半到8点半打卡!", // 提示文案
+    "is_pop": true // 是否弹窗
+  }
 }
 ```

@@ -1,0 +1,28 @@
+version: "3.5"
+
+services:
+  vuepress:
+    image: registry.cn-shenzhen.aliyuncs.com/jerry-dev/vuepress:v1.0
+    networks:
+      - proxy
+    volumes:
+      - $PWD/dist:/
+    deploy:
+      mode: global
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      placement:
+        constraints:
+          - "node.role==manager"
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.vuepress.rule=Host(`docs.tzf-foryou.com`)"
+        - "traefik.http.routers.vuepress.entrypoints=websecure"
+        - "traefik.http.routers.vuepress.tls.certresolver=le"
+        - "traefik.http.services.vuepress.loadbalancer.server.port=80"
+
+networks:
+  proxy:
+    external: true
