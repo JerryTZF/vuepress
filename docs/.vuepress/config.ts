@@ -30,30 +30,11 @@ module.exports = {
         tip: 'INFO',
         warning: 'WARNING',
         danger: 'DANGER',
+        sidebarDepth: 1,
         navbar: [
             {
                 text: '概述',
                 link: '/zh/overview'
-            },
-            {
-                text: '编程语言',
-                children: [
-                    {
-                        text: 'php', children: [
-                            {text: '配置相关', link: '/zh/lang/php/php-ini-config'},
-                            {text: 'cli模式', link: '/zh/lang/php/php-cli'},
-                            {text: '常用函数', link: '/zh/lang/php/php-normal-func'},
-                            {text: 'swoole', link: '/zh/lang/php/php-swoole'},
-                        ]
-                    },
-                    {
-                        text: 'golang', children: [
-                            {text: '🐘-语法', link: '/zh/lang/golang/go-01'},
-                            {text: '🐘-FPM', link: '/zh/lang/golang/go-02'},
-                            {text: '🐘-SWOOLE', link: '/zh/lang/golang/go-03'},
-                        ]
-                    }
-                ]
             },
             {
                 text: 'Hyperf框架',
@@ -61,58 +42,21 @@ module.exports = {
                     {text: '奇技淫巧', link: '/zh/lang/php/php-01'}
                 ]
             },
+            {text: '常用工具', link: '/zh/tools'},
             {
-                text: '友谊万岁', children: [
-                    {
-                        text: '前端',
-                        children: [
-                            {text: '前端-01', link: '/zh/lang/golang/go-01'},
-                            {text: '前端-02', link: '/zh/lang/golang/go-01'},
-                            {text: '前端-03', link: '/zh/lang/golang/go-01'},
-                        ]
-                    },
-                    {
-                        text: '后端',
-                        children: [
-                            {text: '后端-01', link: '/zh/lang/golang/go-01'},
-                            {text: '后端-02', link: '/zh/lang/golang/go-01'},
-                            {text: '后端-03', link: '/zh/lang/golang/go-01'},
-                        ]
-                    }
+                text: '项目文档',
+                children: [
+                    {text: '文档说明', link: '/zh/project/overview',},
+                    {text: '积分有礼', link: '/zh/project/gift_point/gift-point-db'},
+                    {text: '运营商', link: '/zh/project/operator/operator-db'},
+                    {text: '银行申卡', link: '/zh/project/bank/bank-db'},
                 ]
-            },
-            {text: '项目文档', link: '/zh/project/gift-point'},
-            {text: '接口文档', link: '/zh/linux/linux-01'}
+            }
         ],
         sidebar: [
             {
                 text: '概述',
                 link: '/zh/overview'
-            },
-            {
-                text: '编程语言',
-                collapsible: true,
-                children: [
-                    {
-                        text: 'PHP',
-                        collapsible: true,
-                        children: [
-                            '/zh/lang/php/php-ini-config.md',
-                            '/zh/lang/php/php-cli',
-                            '/zh/lang/php/php-normal-func',
-                            '/zh/lang/php/php-swoole',
-                        ]
-                    },
-                    {
-                        text: 'Golang',
-                        collapsible: true,
-                        children: [
-                            '/zh/lang/golang/go-01',
-                            '/zh/lang/golang/go-02',
-                            '/zh/lang/golang/go-03',
-                        ]
-                    }
-                ]
             },
             {
                 text: '杂项',
