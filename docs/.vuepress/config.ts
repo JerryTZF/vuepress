@@ -32,17 +32,17 @@ module.exports = {
         danger: 'DANGER',
         sidebarDepth: 1,
         navbar: [
-            {
-                text: '概述',
-                link: '/zh/overview'
-            },
+            {text: '概述', link: '/zh/overview'},
+            {text: '常用工具', link: '/zh/tools'},
             {
                 text: 'Hyperf框架',
                 children: [
-                    {text: '奇技淫巧', link: '/zh/lang/php/php-01'}
+                    {text: 'web使用', link: '/zh/hyperf/hyperf-web'},
+                    {text: '常用组件', link: '/zh/hyperf/hyperf-component'},
+                    {text: '奇技淫巧', link: '/zh/hyperf/hyperf-skills'},
+                    {text: '使用规范', link: '/zh/hyperf/hyperf-standard'},
                 ]
             },
-            {text: '常用工具', link: '/zh/tools'},
             {
                 text: '项目文档',
                 children: [
@@ -59,20 +59,30 @@ module.exports = {
                 link: '/zh/overview'
             },
             {
-                text: '杂项',
-                collapsible: true,
+                text: '工具',
+                link: '/zh/tools'
             },
             {
                 text: 'Hyperf框架',
                 collapsible: true,
-            },
-            {
-                text: '项目文档',
-                collapsible: true,
-            },
-            {
-                text: '接口文档',
-                collapsible: true,
+                children: [
+                    {
+                        text: 'web使用',
+                        link: '/zh/hyperf/hyperf-web'
+                    },
+                    {
+                        text: '常用组件',
+                        link: '/zh/hyperf/hyperf-component'
+                    },
+                    {
+                        text: '奇技淫巧',
+                        link: '/zh/hyperf/hyperf-skills'
+                    },
+                    {
+                        text: '使用规范',
+                        link: '/zh/hyperf/hyperf-standard'
+                    }
+                ]
             }
         ]
     },

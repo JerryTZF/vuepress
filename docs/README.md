@@ -10,7 +10,6 @@ actions:
   link: /zh/project/overview
   type: secondary
 
-footer: MIT Licensed | Copyright © 2022-Powered by Vuepress
 ---
 
 # wiki说明
@@ -30,7 +29,7 @@ footer: MIT Licensed | Copyright © 2022-Powered by Vuepress
 > 
 > 5、`emoji` 相关语法参见 [emoji文档 :rocket:](https://github.com/ikatyang/emoji-cheat-sheet)
 > 
-> 6、文档概述请点击 [概述](/zh/overview.md)
+> 6、`frontmatter` 请参考 [frontmatter文档 :sunglasses:](https://vuepress2.netlify.app/zh/reference/default-theme/frontmatter.html#%E6%89%80%E6%9C%89%E9%A1%B5%E9%9D%A2)
 
 ## 维护说明
 
