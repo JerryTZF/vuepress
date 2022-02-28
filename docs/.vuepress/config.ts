@@ -27,9 +27,9 @@ module.exports = {
         lastUpdatedText: '更新时间',
         contributorsText: '贡献者',
         editLink: false,
-        tip: 'INFO',
-        warning: 'WARNING',
-        danger: 'DANGER',
+        tip: '【注意】',
+        warning: '【警告】',
+        danger: '【危险】',
         sidebarDepth: 1,
         navbar: [
             {text: '概述', link: '/zh/overview'},

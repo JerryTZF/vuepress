@@ -31,6 +31,8 @@ sidebar: [
 
 ---
 
+## 积分有礼客户端
+
 |          API           | DOMAIN |            ROUTE            |       TYPE       |
 | :--------------------: | :----: | :-------------------------: | :--------------: |
 |       [获取轮播图](/zh/project/gift_point/api/banner.md)       |   /    |     v2/banner/list.json     | application/json |
@@ -67,4 +69,25 @@ sidebar: [
 |     [获取排行榜数据](/zh/project/gift_point/api/walk-rank.md)     |   /    |      v2/walk/rank.json      | application/json |
 |        [兑换积分](/zh/project/gift_point/api/walk-exchange.md)        |   /    |    v2/walk/exchange.json    | application/json |
 
+
+---
+
+
+## 积分底层
+
+::: warning
+前端无需关注
+:::
+
+---
+
+|           API            | DOMAIN |          ROUTE           |       TYPE       |
+| :----------------------: | :----: | :----------------------: | :--------------: |
+|       [查询用户积分](/zh/project/gift_point/api/core-query-points.md)       |   /    |  core/user/balance.json  | application/json |
+|   [查询用户积分变更记录](/zh/project/gift_point/api/core-records.md)   |   /    |  core/user/records.json  | application/json |
+|   [发放\|扣减 用户积分](/zh/project/gift_point/api/core-update.md)    |   /    |  core/point/update.json  | application/json |
+|     [查询用户过期积分](/zh/project/gift_point/api/core-expired.md)     |   /    | core/point/expired.json  | application/json |
+| [查询最近一天要过期的积分](/zh/project/gift_point/api/core-recent-expired.md) |   /    | core/recent/expired.json | application/json |
+
+---
 

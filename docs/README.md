@@ -42,3 +42,13 @@ actions:
 > 3、相关的配置参数见：`vuepress/docs/.vuepress/config.ts`
 > 
 > 4、读懂 :arrow_up: ，请将文档写入 `vuepress/docs/zh` 目录即可
+
+---
+
+## 搜索说明
+
+---
+
+> 1、有些内容不会展示在对应的`sidebar` 或者 `navbar` 中，可以通过搜索来找到你想要的内容
+> 
+> 2、搜索命中的是文档的题目(一级标题) :dart:
