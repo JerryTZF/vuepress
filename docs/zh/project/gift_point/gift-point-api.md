@@ -75,7 +75,7 @@ sidebar: [
 
 ## 积分底层
 
-::: warning
+::: warning 【注意】
 前端无需关注
 :::
 
