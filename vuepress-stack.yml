@@ -2,7 +2,7 @@ version: "3.5"
 
 services:
   vuepress:
-    image: registry.cn-shenzhen.aliyuncs.com/jerry-dev/vuepress:v1.4
+    image: registry.cn-shenzhen.aliyuncs.com/jerry-dev/vuepress:v1.5
     networks:
       - proxy
     deploy:
