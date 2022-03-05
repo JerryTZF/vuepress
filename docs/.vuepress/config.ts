@@ -44,6 +44,10 @@ module.exports = {
                 ]
             },
             {
+                text: 'Docker相关',
+                children: []
+            },
+            {
                 text: '项目文档',
                 children: [
                     {text: '文档说明', link: '/zh/project/overview',},

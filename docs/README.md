@@ -21,9 +21,9 @@ actions:
 > 1、搜索快捷键 `/` 或者 `s` 即可将光标移动至搜索框
 > 
 > 2、`sidebar` 目前是做成固定的，后续文档内容较多时，会随着
-> 具体文档变化而变化[FEAT]
+> 具体文档变化而变化[已完成]
 > 
-> 3、该WIKI项目暂无登录相关模块，该功能暂时由 `traefik` 的 `auth` 中间件提供 :(
+> 3、该WIKI项目暂无登录相关模块，该功能暂时由 `traefik` 的 [BasicAuth](https://doc.traefik.io/traefik/middlewares/http/basicauth/) 中间件提供 :(
 > 
 > 4、新增、编辑文档需要懂得一些 `markdown` 、 `vuepress` 相关知识，相关文档详见：[vuepress](https://vuepress2.netlify.app/)
 > 
