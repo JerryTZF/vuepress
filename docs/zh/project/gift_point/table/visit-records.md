@@ -23,3 +23,51 @@ next: /zh/project/gift_point/table/box-records.md
 ---
 
 # 访问记录表
+
+---
+
+## 字段及说明
+
+|    field    |    Type     |    Default     |  Index  |   Desc   |
+| :---------: | :---------: | :------------: | :-----: | :------: |
+|     id      |     int     | auto_increment | PRIMARY | 自增主键 |
+|    date     | varchar(16) |       ""       |  NULL   |   日期   |
+|   mobile    | varchar(16) |       ""       |  NULL   |  手机号  |
+|    uuid     | varchar(32) |       ""       |  NULL   |   UUID   |
+| create_time |  datetime   |      NULL      |  NULL   | 创建时间 |
+| modify_time |  datetime   |      NULL      |  NULL   | 修改时间 |
+
+---
+
+
+---
+
+## DDL
+
+```sql
+CREATE TABLE `browse` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `date` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
+  `mobile` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
+  `uuid` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
+  `create_time` datetime DEFAULT NULL,
+  `modify_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+```
+
+---
+
+
+## 使用场景
+
+> 管理后台
+
+- `IndexService->user` 统计浏览人数
+- `UserService->statisstics` 用户详情页的访问(浏览)人数
+
+---
+
+> 小程序客户端
+
+- `MyService->login` 每日第一次登录成功后，写入一次访问记录
