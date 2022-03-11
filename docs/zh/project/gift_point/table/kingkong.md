@@ -60,11 +60,21 @@ CREATE TABLE `kingkong` (
   `create_time` datetime DEFAULT NULL,
   `modify_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 ```
 
 ---
 
 ## 使用场景
 
+> 管理后台
 
+- `CommonController->updateStatus` 变更金刚区状态
+- `KingkongService->list` 金刚区列表
+- `KingkongService->update` 编辑金刚区
+
+---
+
+> 小程序客户端
+
+- `KingkongController->list` 金刚区列表

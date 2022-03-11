@@ -64,5 +64,5 @@ CREATE TABLE `admin` (
 
 ## 使用场景
 
-- `CheckTokenMiddleware` 中间件校验
-- `LoginService` 校验管理员是否存在
+- `CheckTokenMiddleware->process` 中间件校验
+- `LoginService->login` 校验管理员是否存在

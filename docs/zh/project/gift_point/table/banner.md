@@ -45,7 +45,8 @@ next: /zh/project/gift_point/table/kingkong.md
 | modify_time |       datetime        |      NULL      |  NULL   |        修改时间         |
 
 ::: warning 【注意】
-当type=TASK时,这里是task表的外键
+当type=TASK时,task_id字段是task表的外键。 \
+当type=NORMAL时，task_id字段为0
 :::
 
 ---
@@ -74,3 +75,16 @@ CREATE TABLE `banner` (
 ---
 
 ## 使用场景
+
+> 管理后台
+
+- `CommonController->updateStatus` 变更轮播图状态
+- `BannerService->updateBanner` 更新轮播图
+- `BannerService->normalBannerList` 非任务类型轮播图列表
+- `BannerService->taskBannerList` 任务类型轮播图列表
+
+---
+
+> 小程序客户端
+
+- `BannerController->list` 轮播图列表

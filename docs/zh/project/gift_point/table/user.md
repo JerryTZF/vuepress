@@ -89,3 +89,38 @@ CREATE TABLE `user` (
 ---
 
 ## 使用场景
+
+> 管理后台
+
+- `BoxesService->detailInfo` 盲盒详细数据展示
+- `PickupService->detailInfoNew` 瓜分打卡详细信息
+- `IndexService->user` 新增用户数
+- `RedpackService->exDetail` 红包兑换详情
+- `TaskService->finishDetail` 任务完成详情
+- `UserService->userList` 用户列表
+- `UserService->statistics` 用户统计
+- `WalkService->detailInfo` 走路兑换积分详情
+---
+
+> 小程序客户端
+
+- `MyController->getUserInfo` 获取用户基本信息
+- `MyService->login` 小程序登录
+- `MyService->setUserInfo` 设置用户信息
+- `MyService->setUserPhone` 设置用户手机号
+- ~~`RedpackController->rob` 获取用户uuid和手机号~~
+- `CheckUserIdMiddleware->process` 根据user_id获取user对象
+- ~~`PickupService->sign` 获取用户手机号~~
+- ~~`PickupService->rank` 排行榜个人信息~~
+- ~~`TaskService->finish` 完成任务需要个人信息~~
+
+::: tip 【变更说明】
+中间件变更为获取user对象，不再是uuid，所以service层内重复获取用户基本信息的操作可以省去。
+:::
+
+
+---
+
+> 工具类封装
+
+- `_Tool/User->getUuidByUserId` 根据user_id获取uuid
