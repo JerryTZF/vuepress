@@ -106,3 +106,9 @@ CREATE TABLE `daily_pickup_records` (
 - `PickupService->pick` 早起打卡->打卡
 - `PickupService->popup` 通知用户获得奖励情况(一天只弹一次)
 - `PickupService->rank` 早起打卡->排行榜
+
+---
+
+> 定时任务
+
+- `CalculatePickup->execute` 发放积分添加记录

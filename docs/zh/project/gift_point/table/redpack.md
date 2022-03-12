@@ -108,3 +108,9 @@ CREATE TABLE `redpack` (
 - `RedpackService->show` 展示红包详情页
 - `RedpackService->radio` 广播中奖信息
 - `RedpackService->click` 点击红包(记录点击情况)
+
+---
+
+> 定时任务
+
+- `RedpackReset->execute` 查询红包配置重置每日的红包缓存库存
