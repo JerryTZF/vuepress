@@ -27,3 +27,19 @@ sidebar: [
 
 ---
 # 积分有礼缓存设计
+
+::: tip 【说明】
+1、缓存设计主要分：`盲盒`、`天天签到`、`积分抽奖`、`早起打卡`、`红包`、`运动兑积分`、`用户相关`这几个模块进行设置 \
+2、活动的 `配置` 目前也是通过缓存进行存储 \
+3、cache 采用 `Redis`
+:::
+
+---
+
+- [盲盒](/zh/project/gift_point/cache/box.md)
+- [天天签到](/zh/project/gift_point/cache/sign.md)
+- [积分抽奖](/zh/project/gift_point/cache/lottery.md)
+- [早起打卡](/zh/project/gift_point/cache/pickup.md)
+- [红包](/zh/project/gift_point/cache/redpack.md)
+- [运动兑积分](/zh/project/gift_point/cache/sport.md)
+- [用户相关](/zh/project/gift_point/cache/user.md)
