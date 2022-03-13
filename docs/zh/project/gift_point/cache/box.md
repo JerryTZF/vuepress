@@ -18,7 +18,7 @@ next: /zh/project/gift_point/cache/sign.md
 
 # 盲盒缓存设计
 
-## 基本信息
+## 1、配置信息
 
 - TYPE: STRING
 - KEY: BOXES_CONFIG
@@ -31,7 +31,7 @@ next: /zh/project/gift_point/cache/sign.md
 
 ---
 
-## 示例
+### 示例
 
 ```json
 [
@@ -67,7 +67,39 @@ next: /zh/project/gift_point/cache/sign.md
 ```
 ---
 
-## 使用场景
+### 使用场景
 
-- 管理后台编辑该配置
-- 小程序盲盒模块的前置条件：配置不存在或者非法返回异常信息
+> 管理后台
+
+- `BoxController->config` 管理后台配置盲盒信息
+
+> 客户端小程序
+ 
+- `BoxesService->get` 配置是否存在,不存在返回异常
+- `BoxexService->show` 配置是否存在,不存在返回异常
+- `TaskService->finish` 完成数至可以领取盲盒时，读取配置，确定下发哪一个盲盒
+
+---
+
+## 2、盲盒领取情况
+
+- TYPE: HASH TABLE
+- KEY: BOXES_DONE_{$APPID}_{$USERID}
+- FIELD: 盲盒名称
+- VALUE: DONE
+- TTL: NULL
+
+---
+
+### 示例
+
+![示例](http://img.tzf-foryou.com/img/20220313143005.png)
+
+---
+
+### 常用场景
+
+> 小程序客户端
+
+- `BoxexService->show` 盲盒领取判断用户是否领取过该盲盒
+- `BoxesService->get` 判断用户是否领取过该盲盒 + 写入缓存用户领取该盲盒记录
