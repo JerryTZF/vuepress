@@ -18,7 +18,11 @@ next: /zh/project/gift_point/cache/sign.md
 
 # 盲盒缓存设计
 
+[[TOC]]
+
 ## 1、配置信息
+
+### 基本信息
 
 - TYPE: STRING
 - KEY: BOXES_CONFIG
@@ -82,6 +86,8 @@ next: /zh/project/gift_point/cache/sign.md
 ---
 
 ## 2、盲盒领取情况
+
+### 基本信息
 
 - TYPE: HASH TABLE
 - KEY: BOXES_DONE_{$APPID}_{$USERID}

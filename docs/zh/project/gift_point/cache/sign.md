@@ -18,7 +18,11 @@ next: /zh/project/gift_point/cache/lottery.md
 
 # 天天签到
 
+[[TOC]]
+
 ## 1、配置信息
+
+### 基本信息
 
 - TYPE: STRING
 - KEY: SIGN_CONFIG
