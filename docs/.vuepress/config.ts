@@ -45,7 +45,13 @@ module.exports = {
             },
             {
                 text: 'Docker相关',
-                children: []
+                children: [
+                    {text: '基础知识', link: '/zh/docker/basic'},
+                    {text: '容器编排', link: '/zh/docker/docker-compose'},
+                    {text: 'Docker Swarm', link: '/zh/docker/swarm'},
+                    {text: '卷的使用', link: '/zh/docker/volume'},
+                    {text: '网络相关', link: '/zh/docker/network'},
+                ]
             },
             {
                 text: '项目文档',
