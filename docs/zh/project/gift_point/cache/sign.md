@@ -16,7 +16,7 @@ next: /zh/project/gift_point/cache/lottery.md
 
 ---
 
-# 天天签到
+# 天天签到缓存设计
 
 [[TOC]]
 

@@ -16,11 +16,13 @@ next: /zh/project/gift_point/cache/pickup.md
 
 ---
 
-# 积分抽奖
+# 积分抽奖缓存设计
 
 [[TOC]]
 
 ## 1、配置信息
+
+### 基本信息
 
 - TYPE: HASH TABLE
 - KEY: LOTTERY_CONFIG
