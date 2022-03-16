@@ -18,6 +18,8 @@ next: /zh/project/gift_point/gift-point-cache.md
 
 # 用户缓存设计
 
+[[TOC]]
+
 ## 1、小程序登录
 
 ### 基本信息

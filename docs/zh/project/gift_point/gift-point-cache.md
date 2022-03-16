@@ -25,6 +25,9 @@ sidebar: [
 ]}
 ]
 
+prev: /zh/project/gift_point/gift-point-db
+next: /zh/project/gift_point/gift-point-config
+
 ---
 # 积分有礼缓存设计
 

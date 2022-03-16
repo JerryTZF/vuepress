@@ -25,5 +25,20 @@ sidebar: [
 ]}
 ]
 
+prev: /zh/project/gift_point/gift-point-config
+next: /zh/project/gift_point/gift-point-api
+
 ---
 # 其他声明
+
+## 支付宝SDK配置
+
+
+---
+
+
+
+## 集群配置
+
+
+---
