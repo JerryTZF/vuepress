@@ -33,7 +33,7 @@ module.exports = {
         sidebarDepth: 1,
         navbar: [
             {text: '概述', link: '/zh/overview'},
-            {text: '常用工具', link: '/zh/tools'},
+            // {text: '常用工具', link: '/zh/tools'},
             {
                 text: 'Hyperf框架',
                 children: [
