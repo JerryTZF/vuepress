@@ -13,3 +13,31 @@ next: /zh/project/gift_point/gift-point-api
 ---
 
 # 最近一天要过期的积分
+
+
+---
+
+> ROUTE: core/recent/expired.json
+
+> REQUEST:
+
+```json
+{
+  "uuid": "810215970546729970"
+}
+```
+
+> RESPONSE:
+
+```json
+{
+  "code": 200,
+  "msg": "ok",
+  "status": true,
+  "data": {
+    "s": 1647532800, // 今天时间戳
+    "e": 1647619200, // 明天时间戳
+    "points": 0 // 在{$s}和{$e}之间要失效的积分数值
+  }
+}
+```

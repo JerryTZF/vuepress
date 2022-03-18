@@ -13,3 +13,28 @@ next: /zh/project/gift_point/api/core-records
 ---
 
 # 查询用户积分
+
+---
+
+> ROUTE: core/user/balance.json
+
+> REQUEST:
+
+```json
+{
+    "uuid": "810215970546729970"
+}
+```
+
+> RESPONSE:
+
+```json
+{
+  "code": 200,
+  "msg": "ok",
+  "status": true,
+  "data": {
+    "active_balance": 8088
+  }
+}
+```

@@ -13,3 +13,31 @@ next: /zh/project/gift_point/api/core-recent-expired.md
 ---
 
 # 查询过期积分
+
+---
+
+> ROUTE: core/point/expired.json
+
+> REQUEST:
+
+```json
+{
+  "uuid": "810215970546729970"
+}
+```
+
+> RESPONSE:
+
+```json
+{
+  "code": 200,
+  "msg": "ok",
+  "status": true,
+  "data": [
+    {
+      "total": 3, // 一共要失效的积分数值
+      "date": "2022-01-05" // 将在哪一天失效
+    }
+  ]
+}
+```

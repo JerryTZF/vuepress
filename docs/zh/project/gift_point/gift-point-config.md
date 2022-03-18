@@ -121,5 +121,6 @@ QUERY_USER_RECENT_EXPIRED=https://core.xxxx.cn/core/recent/expired.json
 ```
 
 ::: danger 【底层能力】
-积分有礼依赖于积分底层的一些能力，由于模块较少，这里服务与服务之间采用 `HTTP` 协议通信，没有使用 `微服务`
+- 积分有礼依赖于积分底层的一些能力，由于模块较少，这里服务与服务之间采用 `HTTP` 协议通信，没有使用 `微服务`
+- API见: [积分底层API文档](/zh/project/gift_point/api/core-query-points.md)
 :::

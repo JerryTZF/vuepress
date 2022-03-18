@@ -36,6 +36,7 @@ next: /zh/project/gift_point/gift-point-api
 ::: tip
 - 使用支付宝官方 [easy-sdk](https://github.com/alipay/alipay-easysdk/tree/master/php)
 - `easy-sdk` 中的 `API` 均为 `OpenAPI`，前端的 `my.xxx` 为前端调用功能API，不是开放能力中的API
+- 详细的支付宝使用见对应文档
 :::
 
 ---
