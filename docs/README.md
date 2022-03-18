@@ -11,7 +11,7 @@ actions:
   type: secondary
 
 footerHtml: true
-footer: '<p><img src="http://img.tzf-foryou.com/img/20220317093530.png"> <a class="banquan" style="color:#000;" href="https://beian.miit.gov.cn/)#/Integrated/recordQuery" target="_blank">粤ICP备17101923号-1</a></p>'
+footer: '<p><img src="http://img.tzf-foryou.com/img/20220317093530.png"> <a class="banquan" style="color:#000;" href="https://beian.miit.gov.cn/)#/Integrated/recordQuery" target="_blank">粤ICP备17101923号</a></p>'
 
 ---
 
