@@ -33,7 +33,6 @@ module.exports = {
         sidebarDepth: 1,
         navbar: [
             {text: '概述', link: '/zh/overview'},
-            // {text: '常用工具', link: '/zh/tools'},
             {
                 text: 'Hyperf框架',
                 children: [
@@ -63,37 +62,37 @@ module.exports = {
                 ]
             }
         ],
-        sidebar: [
-            {
-                text: '概述',
-                link: '/zh/overview'
-            },
-            {
-                text: '工具',
-                link: '/zh/tools'
-            },
-            {
-                text: 'Hyperf框架',
-                collapsible: true,
-                children: [
-                    {
-                        text: 'web使用',
-                        link: '/zh/hyperf/hyperf-web'
-                    },
-                    {
-                        text: '常用组件',
-                        link: '/zh/hyperf/hyperf-component'
-                    },
-                    {
-                        text: '奇技淫巧',
-                        link: '/zh/hyperf/hyperf-skills'
-                    },
-                    {
-                        text: '使用规范',
-                        link: '/zh/hyperf/hyperf-standard'
-                    }
-                ]
-            }
-        ]
+        // sidebar: [
+        //     {
+        //         text: '概述',
+        //         link: '/zh/overview'
+        //     },
+        //     {
+        //         text: '工具',
+        //         link: '/zh/tools'
+        //     },
+        //     {
+        //         text: 'Hyperf框架',
+        //         collapsible: true,
+        //         children: [
+        //             {
+        //                 text: 'web使用',
+        //                 link: '/zh/hyperf/hyperf-web'
+        //             },
+        //             {
+        //                 text: '常用组件',
+        //                 link: '/zh/hyperf/hyperf-component'
+        //             },
+        //             {
+        //                 text: '奇技淫巧',
+        //                 link: '/zh/hyperf/hyperf-skills'
+        //             },
+        //             {
+        //                 text: '使用规范',
+        //                 link: '/zh/hyperf/hyperf-standard'
+        //             }
+        //         ]
+        //     }
+        // ]
     },
 }
