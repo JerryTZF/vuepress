@@ -17,3 +17,13 @@ sidebarDepth: 3
 - [验证器中间件](/zh/hyperf/middleware/validator.md)
 - [自定义全局中间件](/zh/hyperf/middleware/overload.md)
 - [自定义校验中间件](/zh/hyperf/middleware/normal.md)
+
+
+## 异常处理器
+
+- [注册异常处理器](/zh/hyperf/exception/register.md) <sup>必须</sup>
+- [验证器异常处理器](/zh/hyperf/exception/validator.md)
+- [数据库数据未找到异常处理](/zh/hyperf/exception/data-not-found.md)
+- [限流异常处理器](/zh/hyperf/exception/rate-limit.md)
+- [HTTP异常处理器](/zh/hyperf/exception/http.md)
+- [全局异常处理器](/zh/hyperf/exception/global.md)
