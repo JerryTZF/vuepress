@@ -27,3 +27,7 @@ sidebarDepth: 3
 - [限流异常处理器](/zh/hyperf/exception/rate-limit.md)
 - [HTTP异常处理器](/zh/hyperf/exception/http.md)
 - [全局异常处理器](/zh/hyperf/exception/global.md)
+
+## 日志
+
+- [配置和封装](/zh/hyperf/log/log.md)

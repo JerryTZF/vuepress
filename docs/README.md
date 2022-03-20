@@ -23,8 +23,7 @@ footer: '<p><img src="http://img.tzf-foryou.com/img/20220317093530.png"> <a clas
 
 > 1、搜索快捷键 `/` 或者 `s` 即可将光标移动至搜索框
 > 
-> 2、`sidebar` 目前是做成固定的，后续文档内容较多时，会随着
-> 具体文档变化而变化[已完成]
+> 2、`sidebar` 没有在全局设置中使用，均采用 `frontmatter` 在页面定义
 > 
 > 3、该WIKI项目暂无登录相关模块，该功能暂时由 `traefik` 的 [BasicAuth](https://doc.traefik.io/traefik/middlewares/http/basicauth/) 中间件提供 :(
 > 
