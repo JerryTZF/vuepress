@@ -31,3 +31,13 @@ sidebarDepth: 3
 ## 日志
 
 - [配置和封装](/zh/hyperf/log/log.md)
+
+## 事件监听
+
+- [监听机制](/zh/hyperf/listen/listen.md)
+
+## 定时任务
+
+- [定时任务](/zh/hyperf/crontab/crontab.md)
+
+## 消息队列(Redis)

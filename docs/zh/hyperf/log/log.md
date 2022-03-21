@@ -1,6 +1,7 @@
 ---
 sidebar: 'auto'
 prev: /zh/hyperf/hyperf-component.md
+next: /zh/hyperf/listen/listen.md
 
 ---
 
