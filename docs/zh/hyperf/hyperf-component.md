@@ -7,7 +7,7 @@ sidebarDepth: 3
 # 常用组件
 
 ::: warning 【说明】
-这里偏向于使用，对于概念性的东西请自行学习理解。\
+这里偏向于使用和需要格外注意的点，对于**基础概念**的东西请自行学习理解。:hammer_and_pick: \
 对应具体的代码详见：[Hyperf-demo](https://github.com/JerryTZF/hyperf-demo)
 :::
 
@@ -20,7 +20,7 @@ sidebarDepth: 3
 - [自定义校验中间件](/zh/hyperf/middleware/normal.md)
 
 
-## 异常处理器
+## 异常处理
 
 - [注册异常处理器](/zh/hyperf/exception/register.md) <sup>必须</sup>
 - [验证器异常处理器](/zh/hyperf/exception/validator.md)
@@ -33,7 +33,7 @@ sidebarDepth: 3
 
 
 - [日志配置和封装](/zh/hyperf/log/log.md)
-- [监听机制](/zh/hyperf/listen/listen.md)
+- [事件机制](/zh/hyperf/listen/listen.md) :exclamation: 【重要】
 - [定时任务](/zh/hyperf/crontab/crontab.md)
 - [自定义进程](/zh/hyperf/process/process.md)
 - [异步队列(redis驱动)](/zh/hyperf/redis/queue.md)
