@@ -1,7 +1,7 @@
 ---
-sidebar: 'auto' prev: /zh/hyperf/hyperf-component.md
+sidebar: 'auto'
 prev: /zh/hyperf/hyperf-component.md
-
+next: /zh/hyperf/process/process.md
 
 ---
 
@@ -12,7 +12,7 @@ prev: /zh/hyperf/hyperf-component.md
 - `Hyperf` 定时任务本质上是 `Swoole` 拉起的一个进程，并且随着 `Hyperf` 服务启动而启动(可以配置)
 - 集群模式下请保证不会重复执行，一般情况下，集群模式，定时任务或消息队列会统一管理 :smile:
 - 这里采用 `多进程` 模式，协程模式暂未使用，不好总结
-  :::
+:::
 
 ## 配置开启
 

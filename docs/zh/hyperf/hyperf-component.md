@@ -7,7 +7,8 @@ sidebarDepth: 3
 # 常用组件
 
 ::: warning 【说明】
-这里偏向于使用，对于概念性的东西请自行学习理解。
+这里偏向于使用，对于概念性的东西请自行学习理解。\
+对应具体的代码详见：[Hyperf-demo](https://github.com/JerryTZF/hyperf-demo)
 :::
 
 
@@ -28,16 +29,11 @@ sidebarDepth: 3
 - [HTTP异常处理器](/zh/hyperf/exception/http.md)
 - [全局异常处理器](/zh/hyperf/exception/global.md)
 
-## 日志
+## 其他
 
-- [配置和封装](/zh/hyperf/log/log.md)
 
-## 事件监听
-
+- [日志配置和封装](/zh/hyperf/log/log.md)
 - [监听机制](/zh/hyperf/listen/listen.md)
-
-## 定时任务
-
 - [定时任务](/zh/hyperf/crontab/crontab.md)
-
-## 消息队列(Redis)
+- [自定义进程](/zh/hyperf/process/process.md)
+- [异步队列(redis驱动)](/zh/hyperf/redis/queue.md)
