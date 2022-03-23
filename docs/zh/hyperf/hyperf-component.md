@@ -36,4 +36,5 @@ sidebarDepth: 3
 - [事件机制](/zh/hyperf/listen/listen.md) :exclamation: 【重要】
 - [定时任务](/zh/hyperf/crontab/crontab.md)
 - [自定义进程](/zh/hyperf/process/process.md)
-- [异步队列(redis驱动)](/zh/hyperf/redis/queue.md)
+- [异步队列(基本使用)](/zh/hyperf/redis/queue.md)
+- [异步队列(FAQ)](/zh/hyperf/redis/queue-warning.md)
