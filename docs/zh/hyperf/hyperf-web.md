@@ -35,6 +35,8 @@ sidebarDepth: 3
 
 ## 异地登录
 
+- [异地/其他设备登录](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Middleware/CheckTokenMiddleware.php)
+
 ---
 
 ::: tip

@@ -11,6 +11,11 @@ sidebarDepth: 3
 对应具体的代码详见：[Hyperf-demo](https://github.com/JerryTZF/hyperf-demo)
 :::
 
+## 协程
+
+:mortar_board:  协程并不是一个组件，而是一个概念，Hyperf 官方解释的非常清晰 [协程是什么？](https://hyperf.wiki/2.2/#/zh-cn/coroutine?id=%e5%8d%8f%e7%a8%8b%e6%98%af%e4%bb%80%e4%b9%88%ef%bc%9f)
+
+- [协程常见用法](/zh/hyperf/coroutines/coroutines.md)
 
 ## 中间件
 
@@ -37,3 +42,10 @@ sidebarDepth: 3
 - [自定义进程](/zh/hyperf/process/process.md)
 - [异步队列(基本使用)](/zh/hyperf/redis/queue.md)
 - [异步队列(FAQ)](/zh/hyperf/redis/queue-warning.md)
+- [缓存使用](/zh/hyperf/cache/cache.md)
+
+---
+
+::: tip
+持续施工 :construction:
+:::

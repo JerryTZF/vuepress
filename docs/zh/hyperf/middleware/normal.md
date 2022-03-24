@@ -18,7 +18,8 @@ next: /zh/hyperf/hyperf-component.md
 ---
 
 ::: tip
-这里是示例了一个在中间件中校验用户个人信息的功能，该用户存在则写入请求该用户的个人信息对象，方便业务逻辑调用。
+- 这里是示例了一个在中间件中校验用户个人信息的功能，该用户存在则写入请求该用户的个人信息对象，方便业务逻辑调用。
+- 另外一个例子请参考：[异地登录](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Middleware/CheckTokenMiddleware.php)
 :::
 
 ---
