@@ -4,7 +4,7 @@ sidebar: [
 {text: '跨域中间件', link: '/zh/hyperf/middleware/cors.md'},
 {text: '验证器中间件', link: '/zh/hyperf/middleware/validator.md'},
 {text: '自定义全局中间件', link: '/zh/hyperf/middleware/overload.md'},
-{text: '自定义校验中间件', link: '/zh/hyperf/middleware/normal.md'},
+{text: '示例中间件', link: '/zh/hyperf/middleware/normal.md'},
 ]
 sidebarDepth: 2
 
@@ -13,7 +13,7 @@ next: /zh/hyperf/hyperf-component.md
 
 ---
 
-# 自定义校验中间件
+# 示例中间件
 
 ---
 

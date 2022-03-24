@@ -60,6 +60,9 @@ module.exports = {
                     {text: '运营商', link: '/zh/project/operator/operator-db'},
                     {text: '银行申卡', link: '/zh/project/bank/bank-db'},
                 ]
+            },
+            {
+                text: '杂谈', link :'/zh/harvest/overview'
             }
         ],
     },

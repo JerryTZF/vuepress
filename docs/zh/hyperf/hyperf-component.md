@@ -14,10 +14,10 @@ sidebarDepth: 3
 
 ## 中间件
 
-- [跨域中间](/zh/hyperf/middleware/cors.md)
+- [跨域中间件](/zh/hyperf/middleware/cors.md)
 - [验证器中间件](/zh/hyperf/middleware/validator.md)
 - [自定义全局中间件](/zh/hyperf/middleware/overload.md)
-- [自定义校验中间件](/zh/hyperf/middleware/normal.md)
+- [示例中间件](/zh/hyperf/middleware/normal.md)
 
 
 ## 异常处理

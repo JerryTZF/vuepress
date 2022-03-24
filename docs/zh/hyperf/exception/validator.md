@@ -62,7 +62,7 @@ class ValidationExceptionHandler extends ExceptionHandler
         $httpBody = $throwable->validator->errors()->first();
 
         return $response->withHeader('Content-Type', 'application/json')
-            ->withStatus(200)->withBody(new SwooleStream(json_encode([
+            ->withStatus(422)->withBody(new SwooleStream(json_encode([
                 'code'   => SysErrorCode::VALIDATE_ERROR,
                 'msg'    => SysErrorCode::getMessage(SysErrorCode::VALIDATE_ERROR) . $httpBody,
                 'status' => false,
@@ -87,5 +87,6 @@ class ValidationExceptionHandler extends ExceptionHandler
 ## 抛出该异常的场景
 
 ::: tip
-中间件中自定义验证器的 `make` 方法会抛出该异常，详见：[重写自定义验证器](/zh/hyperf/middleware/validator#重写自定义验证器)
+中间件中自定义验证器的 `make` 方法会抛出该异常，详见：[重写自定义验证器](/zh/hyperf/middleware/validator#重写自定义验证器) \
+返回的状态码为 `422`
 :::
