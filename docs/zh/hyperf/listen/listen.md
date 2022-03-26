@@ -64,3 +64,13 @@ next: /zh/hyperf/crontab/crontab.md
 
 ---
 
+::: danger 【格外注意】
+> 1、不要在 `Listener` 中注入 `EventDispatcherInterface`
+
+因为 EventDispatcherInterface 依赖于 ListenerProviderInterface，而 ListenerProviderInterface 初始化的同时，会收集所有的 Listener。
+而如果 Listener 又依赖了 EventDispatcherInterface，就会导致循坏依赖，进而导致内存溢出
+
+> 2、最好只在 `Listener` 中注入 `ContainerInterface`
+
+最好只在 Listener 中注入 ContainerInterface，而其他的组件在 process 中通过 container 获取。框架启动开始时，会实例化 EventDispatcherInterface，这个时候还不是协程环境，如果 Listener 中注入了可能会触发协程切换的类，就会导致框架启动失败。
+:::
