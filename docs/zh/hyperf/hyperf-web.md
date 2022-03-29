@@ -29,13 +29,13 @@ sidebarDepth: 3
 
 - [http请求客户端](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Lib/_Guzzle/RequestClient.php)
 
-## 短信验证码(阿里云)
-
-## Email
-
 ## 异地登录
 
 - [异地/其他设备登录](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Middleware/CheckTokenMiddleware.php)
+
+## 辅助函数
+
+- [辅助函数](https://learnku.com/docs/laravel/5.8/helpers/3919#introduction)
 
 ---
 
