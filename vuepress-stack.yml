@@ -2,7 +2,7 @@ version: "3.5"
 
 services:
   vuepress:
-    image: registry.cn-shenzhen.aliyuncs.com/jerry-dev/vuepress:v1.5
+    image: registry.cn-shenzhen.aliyuncs.com/jerry-dev/vuepress:v1.8.10
     networks:
       - proxy
     deploy:
@@ -16,7 +16,7 @@ services:
           - "node.role==manager"
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.vuepress.rule=Host(`docs.tzf-foryou.com`)"
+        - "traefik.http.routers.vuepress.rule=Host(`wiki.tzf-foryou.xyz`) || Host(`docs.tzf-foryou.com`)"
         - "traefik.http.routers.vuepress.entrypoints=websecure"
         - "traefik.http.routers.vuepress.tls.certresolver=le"
         - "traefik.http.routers.vuepress.middlewares=vuepress-auth"

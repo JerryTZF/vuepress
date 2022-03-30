@@ -51,7 +51,8 @@ prev: /zh/hyperf/hyperf-component.md
             // 写入OSS
             $fileName = 'UPLOADER_' . date('YmdHis') . '.' . $file->getExtension();
             $remotePath = DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . $fileName;
-            $address = 'https://jerry-markdown.oss-cn-shenzhen.aliyuncs.com/img/' . $fileName;
+            [$endpoint, $bucket] = [env('OSS_ENDPOINT'), env('OSS_BUCKET')];
+            $address = "https://$bucket.$endpoint/img/" . $fileName;
             $ossInstance->write($remotePath, file_get_contents($file->getRealPath()));
             return $this->result->setData(['address' => $address])->getResult();
         }

@@ -45,6 +45,7 @@ module.exports = {
             {
                 text: 'Docker相关',
                 children: [
+                    {text: '常用命令', link: '/zh/docker/cli-order'},
                     {text: '基础知识', link: '/zh/docker/basic'},
                     {text: '容器编排', link: '/zh/docker/docker-compose'},
                     {text: 'Docker Swarm', link: '/zh/docker/swarm'},
