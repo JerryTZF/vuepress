@@ -59,6 +59,75 @@ docker是一种**虚拟化环境技术**，例如`vmware`，`virtualbox`等，�
 - **静态只读分层结构**；静态：就像代码不运行起来永远只是没有执行的字母文字一样；只读：当一个镜像构建时，相当于在构建文件系统，在未被运行时，文件内容是不会被写入的；分层结构：任何一个镜像都是基于一个基础镜像，即在基础镜像之上被重新构建。
 - 我们的项目或者环境都是基于一个基础镜像，然后来编写环境、项目代码等内容。
 
+::: tip
+- 对于自定义镜像，我们需要定义 `Dockerfile` 来在基础镜像的基础上，丰富我们自己的需要的功能。
+- 一些官方镜像，镜像内部开放了很多对应的启动工具或者其他工具，在使用官方镜像时，请尽量去 `dockerhub` 阅读文档。
+:::
+
+***构建自己的PHP***
+
+```dockerfile
+FROM php:latest
+MAINTAINER zhaofantian
+
+# 更换国内镜像源
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
+COPY ./sources.list /etc/apt/sources.list
+
+# 安装无需指定配置环境的扩展
+RUN docker-php-ext-install -j$(nproc) iconv calendar
+
+# 安装GD(脚本工具安装)
+RUN apt-get update && apt-get install -y \
+		libfreetype6-dev \
+		libjpeg62-turbo-dev \
+      libpng-dev \
+		&& docker-php-ext-configure gd --with-freetype --with-jpeg \
+		&& docker-php-ext-install -j$(nproc) gd
+		
+# Memcached 扩展(PECL安装)
+RUN apt-get update --fix-missing && apt-get install -y libmemcached-dev zlib1g-dev \
+        && rm -r /var/lib/apt/lists/* \
+        && pecl install memcached-3.1.3 \
+        && docker-php-ext-enable memcached
+
+# 安装zip(脚本工具安装)
+RUN apt-get update --fix-missing && apt-get install -y libzip-dev \
+        && rm -r /var/lib/apt/lists/* \
+        && docker-php-ext-install -j$(nproc) zip
+
+# mcrypt 扩展(PECL安装)
+RUN apt-get update --fix-missing && apt-get install -y libmcrypt-dev \
+        && rm -r /var/lib/apt/lists/* \
+        && pecl install mcrypt-1.0.2 \
+        && docker-php-ext-enable mcrypt
+        
+# redis 扩展(PECL安装)
+RUN pecl install redis-5.0.0 && docker-php-ext-enable redis
+
+# swoole 扩展(PECL扩展)
+RUN pecl install swoole && docker-php-ext-enable swoole
+
+# 安装vim
+RUN apt-get update --fix-missing && apt-get install -y vim
+
+# 安装composer
+RUN set -ex \
+    # install composer
+    && cd /tmp \
+    && wget https://mirrors.aliyun.com/composer/composer.phar \
+    && chmod u+x composer.phar \
+    && mv composer.phar /usr/local/bin/composer \
+    && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer
+
+# 修改时区
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# 暴露9000端口
+EXPOSE 9000
+```
+
 ---
 
 ## 5、容器
@@ -68,6 +137,36 @@ docker是一种**虚拟化环境技术**，例如`vmware`，`virtualbox`等，�
 - 所有对容器的改动 - 无论添加、删除、还是修改文件都只会发生在容器层中。只有容器层是可写的，容器层下面的所有镜像。层都是只读的，也就是说容器修改内容是不会影响依赖于该镜像的其他容器。
 
 ![容器镜像结构](http://img.tzf-foryou.com/img/20220331193418.png)
+
+---
+
+***自定义启动脚本***
+
+```dockerfile
+FROM php:latest
+MAINTAINER zhaofantian
+
+# 复制启动脚本
+COPY ./entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# 暴露9000端口
+EXPOSE 9000
+
+# 启动
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+```
+
+---
+
+```shell
+#!/bin/bash
+# 启动 crontab(添加"&"以守护进程运行)
+/etc/init.d/cron restart &
+# 启动 php-fpm
+docker-php-entrypoint php-fpm
+exec "$@"
+```
 
 ---
 
