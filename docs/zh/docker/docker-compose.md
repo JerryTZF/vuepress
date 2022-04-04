@@ -1,13 +1,13 @@
 ---
 sidebar: 'auto'
-
+sidebarDepth: 3
 ---
 
 # 容器编排
 
 ::: tip 【概念】
 - 多个容器需要相互通信或者相互依赖的时候，我们可以将多个容器按照一定规则编排在一起。通过 `docker-compose.yml` 声明。
-- 这里只说一些比较关键的点。
+- `docker-compose.yml` 基于V3版本，具体每一个选项可以参考：[v3配置参考](https://docs.docker.com/compose/compose-file/compose-file-v3/)
 :::
 
 ---

@@ -192,6 +192,9 @@ exec "$@"
 - **Bridge**: 网桥模式；bridge模式是 `Docker` 默认的网络设置，此模式会为每一个容器分配 `Network Namespace`、设置IP等，
 并将一个主机上的 `Docker` 容器连接到一个虚拟网桥上。
 
+- **overlay2**：`overlay` 网络用于连接不同机器上的 `Docker` 容器，允许不同机器上的容器相互通信，同时支持对消息进行加密。
+详细参见 `网络相关`。
+
 ![docker网络](http://img.tzf-foryou.com/img/20220331194017.png)
 
 ---
@@ -304,6 +307,10 @@ ls /var/lib/docker/volumes/
 3. tmpfs mount
 
 存入内存，基本不用，不做过多介绍。 :stuck_out_tongue:
+
+::: danger 【注意】
+集群模式(Docker Swarm)下的会有 `远程卷` 、`共享卷` 等操作，这个在 `卷的使用` 篇详细介绍。
+:::
 
 ---
 

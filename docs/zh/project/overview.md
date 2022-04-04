@@ -53,7 +53,7 @@ sidebar: [
 
 ## 部署
 
-> 1、`Dockerfile`、`docker-compose.yml`、`sdocker-tack.yml` 等部署配置文件
+> 1、`Dockerfile`、`docker-compose.yml`、`docker-tack.yml` 等部署配置文件
 >
 > 2、阿里云私有镜像仓库地址
 >
