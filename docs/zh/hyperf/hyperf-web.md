@@ -17,7 +17,7 @@ sidebarDepth: 3
 - [验证码](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Lib/_Image/Captcha.php)
 - [二维码](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Lib/_Image/Qrcode.php)
 - [条形码](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Lib/_Image/Barcode.php)
-- [Mime类型转换(图片)](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Controller/DemoController.php#L136)
+- [mime类型转换(图片)](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Controller/DemoController.php#L136)
 
 ## AES加/解密
 
@@ -26,6 +26,8 @@ sidebarDepth: 3
 ## 分布式锁(Redis版)
 
 - [redis锁](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Lib/_Lock/RedisLock.php)
+- [redis锁示例](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Controller/DemoController.php#L205)
+- [sql悲观锁示例](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Controller/DemoController.php#L172)
 
 ## Guzzle封装
 
