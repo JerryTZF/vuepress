@@ -66,12 +66,16 @@ REDIS_DB=14
 
 ### 所需支付宝能力列表(Open API)
 
-- 获取访问令牌 `alipay.system.oauth.token`
-- 获取会员卡投放链接 `alipay.marketing.card.activateurl.apply`
-- 更新会员卡信息 `alipay.marketing.card.update`
-- 下发集分宝 `alipay.user.alipaypoint.send`
+- 获取访问令牌 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02dodi)
+- 上传门店照片和视频接口 [alipay.offline.material.image.upload](https://opendocs.alipay.com/mini/02drva)
+- 会员卡模板创建 [alipay.marketing.card.template.create](https://opendocs.alipay.com/open/02dvee)
+- 会员卡开卡表单模板配置 [alipay.marketing.card.formtemplate.set](https://opendocs.alipay.com/open/02dvei)
+- 会员卡模板外部权益创建 [alipay.marketing.card.benefit.create](https://opendocs.alipay.com/open/02e7gv)
+- 获取会员卡投放链接 [alipay.marketing.card.activateurl.apply](https://opendocs.alipay.com/open/02dvej)
+- 更新会员卡信息 [alipay.marketing.card.update](https://opendocs.alipay.com/open/02dven)
+- 下发集分宝 [alipay.user.alipaypoint.send](https://opendocs.alipay.com/open/02a93b)
 - 解密数据(手机号、运动步数)
-- B2C单笔转账(现金红包) `alipay.fund.trans.uni.transfer`
+- B2C单笔转账(现金红包) [alipay.fund.trans.uni.transfer](https://opendocs.alipay.com/open/02byuo)
 
 ### SDK配置(公钥证书)
 
