@@ -8,6 +8,7 @@ sidebarDepth: 3
 ::: tip 【概念】
 - 多个容器需要相互通信或者相互依赖的时候，我们可以将多个容器按照一定规则编排在一起。通过 `docker-compose.yml` 声明。
 - `docker-compose.yml` 基于V3版本，具体每一个选项可以参考：[v3配置参考](https://docs.docker.com/compose/compose-file/compose-file-v3/)
+- 单个容器我也更加倾向于编写 `docker-compose.yml` 文件，因为根据声明文件可以更加清晰的看出这个容器内都做了什么配置。
 :::
 
 ---
