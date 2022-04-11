@@ -30,6 +30,7 @@ sidebarDepth: 3
   - [redis锁示例](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Controller/DemoController.php#L205)
 - [悲观锁](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Controller/DemoController.php#L172)
 - [队列(单个消费)](/zh/hyperf/redis/oversold.md)
+- [文件锁(非进群)]()
 
 ## Guzzle封装
 
