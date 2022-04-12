@@ -30,7 +30,7 @@ sidebarDepth: 3
   - [redis锁示例](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Controller/DemoController.php#L205)
 - [悲观锁](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Controller/DemoController.php#L172)
 - [队列(单个消费)](/zh/hyperf/redis/oversold.md)
-- [文件锁(非进群)]()
+- [文件锁(非集群)](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Lib/_Lock/FileLock.php)
 
 ## Guzzle封装
 
@@ -43,6 +43,11 @@ sidebarDepth: 3
 ## 辅助函数
 
 - [辅助函数](https://learnku.com/docs/laravel/5.8/helpers/3919#introduction)
+
+## Excel封装
+
+- [数据导出](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Lib/_Office/ExportExcelHandler.php)
+  - [示例](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Controller/DemoController.php#L250)
 
 ---
 

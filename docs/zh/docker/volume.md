@@ -217,7 +217,7 @@ configs:
 
 ::: warning 【说明】
 暂时我是让对应的节点创建它们各自的卷，日志等需要查看的内容分散在不同节点。
-你可以使用 [volume NFS 共享存储模式](https://qastack.cn/programming/47756029/how-does-docker-swarm-implement-volume-sharing)。当然集群日志收集使用 `ZLK` 等专业方案更加优雅。
+你可以使用 [volume NFS 共享存储模式](https://qastack.cn/programming/47756029/how-does-docker-swarm-implement-volume-sharing)。当然集群日志收集使用 `ELK` 等专业方案更加优雅。
 :::
 
 ***示例：***
