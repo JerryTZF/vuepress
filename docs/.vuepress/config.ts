@@ -2,7 +2,7 @@ module.exports = {
     lang: 'zh-CN',
     title: 'Jerry\'s Wiki',
     description: 'This is Jerry\'s first Vuepress',
-    head: [['link', {rel: 'icon', href: '/images/logo.png'}]],
+    head: [['link', {rel: 'icon', href: '/images/logo_bak.png'}]],
     home: '/',
     theme: '@vuepress/theme-default',
     plugins: [
@@ -20,7 +20,7 @@ module.exports = {
         ],
     ],
     themeConfig: {
-        logo: '/images/logo.png',
+        logo: '/images/logo_bak.png',
         repo: 'JerryTZF/vuepress',
         backToHome: 'Page not found, please check :(',
         notFound: ['Sorry, the current document does not exist, please contact your administrator'],
