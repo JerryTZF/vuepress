@@ -46,7 +46,8 @@ sidebarDepth: 3
 
 ## Excel封装
 
-- [数据导出](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Lib/_Office/ExportExcelHandler.php)
+- [数据导出Excel](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Lib/_Office/ExportExcelHandler.php)
+- [数据导出CSV](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Lib/_Office/ExportCsvHandler.php)
   - [示例](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Controller/DemoController.php#L250)
 
 ---
