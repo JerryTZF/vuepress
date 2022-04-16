@@ -2,13 +2,14 @@
 sidebar: 'auto'
 sidebarDepth: 3
 prev: /zh/hyperf/hyperf-component.md
+next: /zh/hyperf/file/file.md
 
 ---
 
 # 缓存使用
 
 ::: tip 【说明】
-- 该组件基于[AOP](https://hyperf.wiki/2.2/#/zh-cn/aop)，可以理解为Python的注解。执行方法前后先执行其他代码。
+- 该组件基于[AOP](https://hyperf.wiki/2.2/#/zh-cn/aop)，可以理解为Python的`装饰器`。执行方法前后先执行其他代码。
 - 使用有两种方式，一种是简单使用，获取实例存储、读取、删除等；另一种是通过注解，切入要缓存的方法，读取时直接走缓存。
 :::
 

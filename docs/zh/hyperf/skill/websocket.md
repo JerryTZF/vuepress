@@ -1,13 +1,15 @@
 ---
 sidebar: 'auto'
 sidebarDepth: 3
+prev: /zh/hyperf/hyperf-skills
+
 ---
 
 # websocket和http合并
 
 ::: tip 【需求】
-- 在 `Http` 服务中使用 `Websocket` 服务。
-- 使用同一个域名同一个端口。通过路由进行区分不同服务。
+- 单个服务中含有 `HttpServer` 和 `WebsocketServer` 。
+- 可以使用同一个域名，同一个端口。通过路由进行区分不同服务。
 - 详情参见：[websocket](https://github.com/JerryTZF/hyperf-demo/blob/main/app/Controller/WebSocketController.php)
 :::
 
@@ -61,6 +63,11 @@ return [
 ```
 
 ## 添加路由
+
+::: warning 目前只支持 `路由配置` 方式，还不支持注解 :(
+:::
+
+---
 
 ```php
 <?php
