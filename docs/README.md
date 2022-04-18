@@ -34,6 +34,8 @@ footer: '<p><img src="http://img.tzf-foryou.com/img/20220317093530.png"> <a clas
 > 5、`emoji` 相关语法参见 [emoji文档 :rocket:](https://github.com/ikatyang/emoji-cheat-sheet)
 > 
 > 6、`frontmatter` 请参考 [frontmatter文档 :sunglasses:](https://vuepress2.netlify.app/zh/reference/default-theme/frontmatter.html#%E6%89%80%E6%9C%89%E9%A1%B5%E9%9D%A2)
+> 
+> 7、更新时间是抓取 `Github` 仓库的文件 `commit` 时间，即不是一成不变的
 
 ## 维护说明
 

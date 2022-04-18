@@ -1,6 +1,7 @@
 ---
 sidebar: [
 { text: '返回', link: '/zh/harvest/overview.md' },
+{ text: 'Index', link: '/zh/harvest/observer/index.md' },
 { text: 'Grafana', link: '/zh/harvest/observer/grafana.md' },
 { text: 'Prometheus', link: '/zh/harvest/observer/prometheus.md' },
 { text: 'Alertmanager', link: '/zh/harvest/observer/alertmanager.md' },
