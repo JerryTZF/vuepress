@@ -2,7 +2,7 @@
 sidebar: 'auto'
 
 prev: /zh/harvest/overview.md
-
+next: /zh/harvest/traefik/config.md
 ---
 
 # 概览
@@ -17,8 +17,10 @@ prev: /zh/harvest/overview.md
 
 - `NGINX` + `PHP-FPM` + `模板引擎` 
 - ↓
-- `Traefik` + `Docker Compose`
-
+- `Traefik` + `Docker Compose` + `Hyperf`
+- ↓
+- `Traefik` + `Docker Swarm` + `Hyperf`
+    
 ---
 
 *刚来公司的时候，使用的传统的 `NGINX` + `PHP-FPM`的方式，又因为公司项目性质是 ***小程序*** (多而小)，部分项目采用的还是
