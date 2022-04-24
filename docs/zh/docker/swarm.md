@@ -89,7 +89,7 @@ stack文件的几个关键点注意下：
 :::
 
 集群一些关键字段请参考：[deploy](https://docs.docker.com/compose/compose-file/deploy/)\
-这里有几个示例可以参考下我的stack文件。【注意】traefik的配置选项后面单独记笔记再介绍。
+这里有几个示例可以参考下我的stack文件。【注意】traefik的配置选项 ~~后面~~ :sunglasses:  单独记[笔记](/zh/harvest/traefik/overview.md)再介绍。
 - [bitwarden-stack.yml](https://github.com/JerryTZF/hyperf-demo/blob/main/docs/bitwarden-stack.yml)
 - [nginx-stack.yml](https://github.com/JerryTZF/hyperf-demo/blob/main/docs/nginx-stack.yml)
 - [portainer-stack.yml](https://github.com/JerryTZF/hyperf-demo/blob/main/docs/portainer-stack.yml)
