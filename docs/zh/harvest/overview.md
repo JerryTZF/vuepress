@@ -8,11 +8,12 @@ sidebar: 'auto'
 ## 系统监控及告警
 
 - [Index](/zh/harvest/observer/index.md)
-- [Grafana](/zh/harvest/observer/grafana.md)
-- [Prometheus](/zh/harvest/observer/prometheus.md)
-- [Alertmanager](/zh/harvest/observer/alertmanager.md)
-- [Influxdb](/zh/harvest/observer/influxdb.md)
+- [Mysqld_exporter](/zh/harvest/observer/mysqld_exporter.md)
 - [Node_exporter](/zh/harvest/observer/node_exporter.md)
+- [Alertmanager](/zh/harvest/observer/alertmanager.md)
+- [Prometheus](/zh/harvest/observer/prometheus.md)
+- [Grafana](/zh/harvest/observer/grafana.md)
+- ~~[Influxdb](/zh/harvest/observer/influxdb.md)~~
 
 ---
 
