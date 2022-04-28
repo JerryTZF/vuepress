@@ -43,7 +43,7 @@ next: /zh/harvest/overview.md
 
 ![](http://img.tzf-foryou.com/img/20220417142118.png)
 
-![](http://img.tzf-foryou.com/img/20220426140308.png)
+![](http://img.tzf-foryou.com/img/20220428201858.png)
 
 ---
 

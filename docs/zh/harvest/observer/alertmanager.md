@@ -138,7 +138,7 @@ networks:
 ---
 
 ::: danger 【Tip】
-告警规则定义需要在 `prometheus` 中定义，详情参见：[server_alert]()
+告警规则定义需要在 `prometheus` 中定义，详情参见：[server_alert.yml](/zh/harvest/observer/prometheus.md)
 :::
 
 ---
