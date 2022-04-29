@@ -8,7 +8,7 @@ sidebar: 'auto'
 ## 系统监控及告警
 
 - [Index](/zh/harvest/observer/index.md)
-- [Mysqld_exporter](/zh/harvest/observer/mysqld_exporter.md)
+- [Mysqld_exporter](/zh/harvest/observer/mysql_exporter.md)
 - [Node_exporter](/zh/harvest/observer/node_exporter.md)
 - [Alertmanager](/zh/harvest/observer/alertmanager.md)
 - [Prometheus](/zh/harvest/observer/prometheus.md)
@@ -28,7 +28,9 @@ sidebar: 'auto'
 
 ## Mysql相关
 
-- [基本原则](/zh/harvest/mysql/principle.md)
+- 原则:
+  - [基本原则](/zh/harvest/mysql/base.md)
+  - [字段原则](/zh/harvest/mysql/field.md)
 
 ---
 
