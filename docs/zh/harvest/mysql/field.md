@@ -1,6 +1,7 @@
 ---
 sidebar: 'auto'
 prev: /zh/harvest/overview.md
+next: /zh/harvest/mysql/index.md
 
 ---
 

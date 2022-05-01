@@ -28,9 +28,10 @@ sidebar: 'auto'
 
 ## Mysql相关
 
-- 原则:
-  - [基本原则](/zh/harvest/mysql/base.md)
-  - [字段原则](/zh/harvest/mysql/field.md)
+- [基本原则](/zh/harvest/mysql/base.md)
+- [字段原则](/zh/harvest/mysql/field.md)
+- [索引原则及原理](/zh/harvest/mysql/index.md)
+- [锁的使用](/zh/harvest/mysql/lock.md)
 
 ---
 
