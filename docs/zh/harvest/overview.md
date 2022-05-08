@@ -39,8 +39,6 @@ sidebar: 'auto'
 
 ## 咖啡屋
 
-- [相亲反思](/zh/harvest/reflect.md)
-
 ::: tip
 持续施工 :construction:
 :::
