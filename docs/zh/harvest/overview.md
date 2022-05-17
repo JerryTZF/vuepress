@@ -39,6 +39,9 @@ sidebar: 'auto'
 
 ## 咖啡屋
 
+- [框架是否真的重要](/zh/harvest/coffee/fraemwork.md)
+- [关于职业规划](/zh/harvest/coffee/planning.md)
+
 ::: tip
 持续施工 :construction:
 :::
