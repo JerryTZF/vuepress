@@ -1,3 +1,5 @@
+import clipboardPlugin from "vuepress-plugin-clipboard";
+
 const {defaultTheme} = require('@vuepress/theme-default')
 const {searchPlugin} = require('@vuepress/plugin-search');
 
@@ -66,6 +68,9 @@ module.exports = {
                 hotKeys: ['s', '/'],
                 maxSuggestions: 10
             }),
+            clipboardPlugin({
+                align: "top"
+            })
         ],
     ],
 }
