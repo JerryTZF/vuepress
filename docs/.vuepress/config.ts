@@ -1,25 +1,13 @@
+const {defaultTheme} = require('@vuepress/theme-default')
+const {searchPlugin} = require('@vuepress/plugin-search');
+
 module.exports = {
     lang: 'zh-CN',
     title: 'Jerry\'s Wiki',
     description: 'This is Jerry\'s first Vuepress',
     head: [['link', {rel: 'icon', href: '/images/logo_bak.png'}]],
     home: '/',
-    theme: '@vuepress/theme-default',
-    plugins: [
-        [
-            '@vuepress/plugin-search',
-            {
-                locales: {
-                    '/': {
-                        placeholder: '搜索',
-                    },
-                },
-                hotKeys: ['s', '/'],
-                maxSuggestions: 10,
-            },
-        ],
-    ],
-    themeConfig: {
+    theme: defaultTheme({
         logo: '/images/logo_bak.png',
         repo: 'JerryTZF/vuepress',
         backToHome: 'Page not found, please check :(',
@@ -63,8 +51,21 @@ module.exports = {
                 ]
             },
             {
-                text: '杂谈', link :'/zh/harvest/overview'
+                text: '杂谈', link: '/zh/harvest/overview'
             }
         ],
-    },
+    }),
+    plugins: [
+        [
+            searchPlugin({
+                locales: {
+                    '/': {
+                        placeholder: '搜索',
+                    },
+                },
+                hotKeys: ['s', '/'],
+                maxSuggestions: 10
+            }),
+        ],
+    ],
 }
