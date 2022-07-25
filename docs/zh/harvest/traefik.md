@@ -3,13 +3,42 @@ sidebar: 'auto'
 sidebarDepth: 3
 
 prev: /zh/harvest/overview.md
-next: /zh/harvest/traefik/usage.md
+next: /zh/harvest/mysql.md
+---
+
+# traefik
+
+## 概览
+
+> **traefik** 与 **nginx** 一样，是一款优秀的反向代理工具，或者叫 `Edge Router`，这里我把它当做 `Gateway`。
+
+***Traefik对比Nginx优势：***
+
+- 支持服务动态发现，无需对每一个服务进行配置重启后生效。
+- 自动装载 `SSL`，无需手动申请证书进行配置。:smile:
+- `Provider` 完美支持 `Docker`,容器间通信格外方便。
+- 动态调整自身负载均衡配置，无需手动配置。
+- `Traefik` 提供的自身详细的metrics数据，对服务监控支持友好。
+- 多种中间件可以对流量、路由等进行拦截处理。
+
+## 为什么选择traefik
+
+***演变过程：***
+
+- `NGINX` + `PHP-FPM` + `模板引擎`
+- ↓
+- `Traefik` + `Docker Compose` + `Hyperf`
+- ↓
+- `Traefik` + `Docker Swarm` + `Hyperf`
 
 ---
 
-# 配置相关
+*刚来公司的时候，使用的传统的 `NGINX` + `PHP-FPM`的方式，又因为公司项目性质是 ***小程序*** (多而小)，部分项目采用的还是
+`模板引擎`，后面接手后，架构打算更换为 `Docker Compose` + `前后端分离`。此时 `Traefik` 的优势就非常适合我们此时的需求。*
 
-## 什么是动态、静态配置
+---
+
+## 配置相关
 
 ::: warning 【说明】
 动态配置、静态配置：
@@ -21,9 +50,7 @@ next: /zh/harvest/traefik/usage.md
 
 ---
 
-## 静态配置说明
-
-::: tip yml格式、以顶级配置项说明
+::: tip 静态配置一些例子(yml格式、以顶级配置项说明)
 :::
 
 ---
@@ -192,10 +219,9 @@ certificatesResolvers:   # 证书相关顶级配置
         entryPoint: web # 必须让“Let's Encrytype”通过端口80到达
       tlsChallenge: {}
 ```
-
 ---
 
-## 静态配置文件示例
+### 静态配置示例
 
 ```yaml
 api:
@@ -240,7 +266,7 @@ certificatesResolvers:
 
 ---
 
-## 动态配置文件示例
+### 动态配置示例
 
 ```yaml
 http:
@@ -274,10 +300,180 @@ tls:
       minVersion: VersionTLS12
 ```
 
+::: danger 【注意】
+- 我们后续的示例和说明，均以 `docker-compose.yml` 中的 `label` 标签进行配置，也就是我们的 `provider` 均以 `Docker` 提供，
+  上面的示例是为了演示都有哪些关键 `Key-Value`
+- 还有许多其他内容，但是我这里并未演示说明，因为我只会列举我用过或者比较重要的内容，全量的内容，请参看[官方文档](https://doc.traefik.io/traefik/)
+:::
+
+---
+
+## 集群使用
+
+::: tip
+- 阿里云ECS作为 `Gateway` 所在服务器；两台腾讯云和阿里云作为服务所在服务器。
+- 这里以 `yml` 文件作为示例，有对应的解释。 :smile:
+- 下面配置中有不明白的，可以在官方文档中搜索对应的关键字即可。像这样：
+
+![](http://img.tzf-foryou.com/img/20220424180518.png)
+
+:::
+
+### traefik服务
+
+```yaml
+version: "3.5"
+
+services:
+  traefik-proxy:
+    image: traefik:v2.3.4
+    command:
+      # These configs are static configs
+      # Open dashboard
+      - "--api"
+      # Docker swarm configuration
+      - "--providers.docker.endpoint=unix:///var/run/docker.sock"
+      - "--providers.docker.swarmMode=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.docker.network=proxy" # Make sure you have created Docker Swarm networks named proxy
+      # Configure entrypoint
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      # SSL configuration
+      - "--certificatesresolvers.le.acme.httpchallenge=true"
+      - "--certificatesresolvers.le.acme.httpchallenge.entrypoint=web"
+      - "--certificatesresolvers.le.acme.email=example@gamil.com"
+      - "--certificatesresolvers.le.acme.storage=/letsencrypt/acme.json"
+      # Global HTTP -> HTTPS
+      - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
+      # Open AccessLog && set it
+      - "--accesslog=true"
+      - "--accesslog.filepath=/letsencrypt/access.log"
+      - "--accesslog.bufferingsize=100"
+      # To enable the prometheus
+      - "--metrics.prometheus=true"
+      - "--metrics.prometheus.buckets=0.100000,0.300000,1.200000,5.000000"
+      - "--metrics.prometheus.entryPoint=traefik"
+      - "--metrics.prometheus.addServicesLabels=true"
+      - "--metrics.prometheus.addEntryPointsLabels=true"
+    networks:
+      - proxy
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+        mode: host
+      - target: 443
+        published: 443
+        protocol: tcp
+        mode: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - traefik-certificates:/letsencrypt
+    deploy:
+      mode: global
+      update_config:
+        parallelism: 1 # Updates will be made one by one
+        failure_action: rollback # Update failure will be rolled back
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      placement:
+        constraints:
+          - "node.role==manager"
+      labels:
+        - "traefik.enable=true"
+        # http -> https
+        - "traefik.http.routers.http2https.rule=HostRegexp(`{any:.+}`)"
+        - "traefik.http.routers.http2https.entrypoints=web"
+        - "traefik.http.routers.http2https.middlewares=https-redirect"
+        - "traefik.http.middlewares.https-redirect.redirectscheme.scheme=https"
+        - "traefik.http.middlewares.https-redirect.redirectscheme.permanent=true"
+        # dashboard
+        - "traefik.http.routers.api.rule=Host(`traefik.example.com`)"
+        - "traefik.http.routers.api.entrypoints=websecure"
+        - "traefik.http.routers.api.tls.certresolver=le"
+        - "traefik.http.routers.api.service=api@internal"
+        # auth middleware
+        - "traefik.http.routers.api.middlewares=api-auth"
+        - "traefik.http.middlewares.api-auth.basicauth.users=admin:$$apr1$$4dF14.8m$$tmj/UCiirgX6q9mao05uD1"
+        - "traefik.http.services.api.loadbalancer.server.port=80"
+
+networks:
+  proxy:
+    external: true
+
+volumes:
+  traefik-certificates:
+```
+---
+
+***配合sh脚本清除日志和移动日志至方便观察的目录***
+
+```shell
+#! /bin/bash
+#-----------------------------------------------------------------------
+#    crontab跑脚本任务    每天00:00点打包traefik的访问日志并清理15天前日志文件 
+#    EXP: 00 00 * * * bash /home/sys/traefik/logs/clear_traefik_log.sh
+#-----------------------------------------------------------------------
+log_file=/var/lib/docker/volumes/traefik_traefik-certificates/_data/access.log
+logs_path=/home/sys/traefik/logs
+save_days=15
+
+# 复制traefik的访问日志，按天切割
+cp ${log_file} ${logs_path}/access-$(date -d "yesterday" +"%Y%m%d").log
+# 清空原来的访问日志
+cat /dev/null > ${log_file}
+# 定期清理x天前的访问日志文件
+find ${logs_path} -mtime +${save_days} -type f -wholename /*.log | xargs rm -f
+```
+
+### 示例
+
+::: tip
+- 通过 `label` 标签(相当于动态配置, `traefik` 会自动发现该服务)进行配置。
+- `label` 标签是在 `deploy` 下面，如果同级，则不是 `Docker Swarm` 模式。
+  :::
+
+```yaml
+version: "3.5"
+
+services:
+  nginx-test:
+    image: nginx
+    networks:
+      - proxy
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - "node.role==worker"
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.nginx.rule=Host(`nginx.example.com`)"
+        - "traefik.http.routers.nginx.entrypoints=websecure"
+        - "traefik.http.routers.nginx.tls.certresolver=le"
+        - "traefik.http.services.nginx.loadbalancer.server.port=80"
+    configs:
+      - source: index
+        target: /usr/share/nginx/html/index.html
+
+
+networks:
+  proxy:
+    external: true
+
+configs:
+  index:
+    file: /nfsroot/nginx/index.html
+```
+
 ---
 
 ::: danger 【注意】
-- 我们后续的示例和说明，均以 `docker-compose.yml` 中的 `label` 标签进行配置，也就是我们的 `provider` 均以 `Docker` 提供，
-上面的示例是为了演示都有哪些关键 `Key-Value`
-- 还有许多其他内容，但是我这里并未演示说明，因为我只会列举我用过或者比较重要的内容，全量的内容，请参看[官方文档](https://doc.traefik.io/traefik/)
+当请求被 `Traefik` 命中，会反代向对应的服务，又因为我们用的是 `Docker Swarm` 集群模式，所以会根据 `Docker Swarm` 的负载均衡
+规则进行服务转发，所以这里需要格外注意，负载均衡并不是走的 `Traefik` :warning: :warning: :warning: 。
+当然我们也可以走 `Traefik` 的负载均衡~
 :::

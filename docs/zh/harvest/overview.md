@@ -5,42 +5,18 @@ sidebar: 'auto'
 
 # 杂谈
 
-## 系统监控及告警
+::: tip 技术
+:::
+- [系统监控及告警](/zh/harvest/observer.md)
+- [Treafik](/zh/harvest/traefik.md)
+- [Mysql](/zh/harvest/mysql.md)
 
-- [Index](/zh/harvest/observer/index.md)
-- [Mysqld_exporter](/zh/harvest/observer/mysql_exporter.md)
-- [Node_exporter](/zh/harvest/observer/node_exporter.md)
-- [Alertmanager](/zh/harvest/observer/alertmanager.md)
-- [Prometheus](/zh/harvest/observer/prometheus.md)
-- [Grafana](/zh/harvest/observer/grafana.md)
-- ~~[Influxdb](/zh/harvest/observer/influxdb.md)~~
 
 ---
 
-## Traefik
+::: tip 生活
+:::
 
-- [概览](/zh/harvest/traefik/overview.md)
-- [配置示例](/zh/harvest/traefik/config.md)
-- [集群使用](/zh/harvest/traefik/usage.md)
-
----
-
-
-## Mysql相关
-
-- [基本原则](/zh/harvest/mysql/base.md)
-- [字段原则](/zh/harvest/mysql/field.md)
-- [索引原则及原理](/zh/harvest/mysql/index.md)
-- [锁的使用](/zh/harvest/mysql/lock.md)
-
----
-
-
-
-## 咖啡屋
-
-- [框架是否真的重要](/zh/harvest/coffee/fraemwork.md)
-- [关于职业规划](/zh/harvest/coffee/planning.md)
 
 ::: tip
 持续施工 :construction:

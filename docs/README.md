@@ -27,7 +27,7 @@ footer: '<p><img src="http://img.tzf-foryou.com/img/20220317093530.png"> <a clas
 > 
 > 2、`sidebar` 没有在全局设置中使用，均采用 `frontmatter` 在页面定义
 > 
-> 3、该WIKI项目暂无登录相关模块，该功能暂时由 `traefik` 的 [BasicAuth](https://doc.traefik.io/traefik/middlewares/http/basicauth/) 中间件提供 :(
+> 3、该WIKI项目暂无登录相关模块，~~该功能暂时由 `traefik` 的 [BasicAuth](https://doc.traefik.io/traefik/middlewares/http/basicauth/) 中间件提供~~ :(
 > 
 > 4、新增、编辑文档需要懂得一些 `markdown` 、 `vuepress` 相关知识，相关文档详见：[vuepress](https://vuepress2.netlify.app/)
 > 

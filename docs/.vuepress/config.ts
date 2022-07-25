@@ -12,8 +12,8 @@ module.exports = {
     theme: defaultTheme({
         logo: '/images/logo_bak.png',
         repo: 'JerryTZF/vuepress',
-        backToHome: 'Page not found, please check :(',
-        notFound: ['Sorry, the current document does not exist, please contact your administrator'],
+        backToHome: '页面未找到，请检查路由 :(',
+        notFound: ['抱歉，当前页面文档未找到，请联系管理员~'],
         lastUpdatedText: '更新时间',
         contributorsText: '贡献者',
         editLink: false,
